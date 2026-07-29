@@ -22,7 +22,6 @@ export default function Navbar() {
         <button 
           className={style.hamburger} 
           onClick={() => {
-            alert("TOMBOL TERDETEKSI DI HP!");
             setIsOpen(!isOpen);
           }}
           type="button"
