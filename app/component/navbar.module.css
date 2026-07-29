@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+:root {
+  --font-poppins: 'Poppins', sans-serif;
+  --warna-kuning: #FFEE00;
+}
+
+/* --- DEKSTOP / LAPTOP STYLE --- */
+
+.container {
+  background: linear-gradient(to right, #0284C7, #1E3A8A);
+  height: 65px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Menjaga logo di kiri & menu di kanan */
+  align-items: center;
+  padding: 0 5%;
+  position: relative;
+  box-sizing: border-box;
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+.brandBox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logoLumba {
+  height: 45px;
+  width: auto;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+}
+
+.sumber {
+  width: 170px;
+  height: auto;
+}
+
+.descrip {
+  color: #ffffff;
+  font-family: var(--font-poppins);
+  font-size: 9px;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+/* Navigasi Laptop */
+.navigation {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-poppins);
+  font-size: 13px;
+  color: white;
+}
+
+.border {
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.border:hover {
+  color: var(--warna-kuning);
+  transform: scale(1.08);
+}
+
+.border a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Tombol Hamburger di-hide kalau di laptop */
+.hamburger {
+  display: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  position: relative;
+  z-index: 999999 !important; 
+  padding: 10px 15px;
+  user-select: none;       
+  -webkit-user-select: none;
+  touch-action: manipulation; 
+}
+
+.headerWrapper, .container {
+  position: relative !important;
+  z-index: 9999999 !important;
+  pointer-events: auto !important;
+}
+
+
+/* --- HP STYLE (Lebar <= 640px) --- */
+
+@media (max-width: 640px) {
+  .container {
+    height: 64px;
+    padding: 0 15px;
+  }
+
+  .logoLumba {
+    height: 35px;
+  }
+
+  .sumber {
+    width: 120px;
+  }
+
+  .descrip {
+    font-size: 7.5px;
+  }
+
+  /* Tampilkan tombol hamburger */
+  .hamburger {
+    display: block !important;
+  }
+
+  /* Sembunyikan menu melayang di bawah navbar */
+  .navigation {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Tepat di bawah navbar */
+    left: 0;
+    width: 100%;
+    background-color: #1E3A8A;
+    padding: 20px 0;
+    gap: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Ketika hamburger diklik, tambahkan kelas ini */
+  .navActive {
+    display: flex !important;
+  }
+
+  .border {
+    text-align: center;
+    width: 100%;
+  }
+}
